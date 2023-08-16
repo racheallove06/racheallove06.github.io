@@ -80,8 +80,6 @@ let currentLocationButton = document.querySelector("#current");
 currentLocationButton.addEventListener("click", getCurrentTemp);
 
 search("Nairobi");
-
-/*function search(event) {
   
   
   

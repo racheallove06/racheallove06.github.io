@@ -87,7 +87,7 @@ search("Nairobi");
   let cityName = searchInput.value.trim();
 
   if (cityName !== "") {
-    displaySearchedCity(cityName);
+    
   
 
 

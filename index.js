@@ -88,7 +88,6 @@ search("Nairobi");
 
   if (cityName !== "") {
     displaySearchedCity(cityName);
-  }*/
-
+  
 
 

@@ -5,7 +5,7 @@ function formatDate() {
   if (currenthour < 10) {
     currenthour = `0${currenthour}`;
   }
-  let currentminute = currentTime.getMinutes();
+  let currentminute = currentTime.getMinutes();                                             
   if (currentminute < 10) {
     currentminute = `0${currentminute}`;
   }
@@ -91,4 +91,4 @@ search("Nairobi");
   }*/
 
 /*let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);*/
+

@@ -86,7 +86,7 @@ search("Nairobi");
   let searchInput = document.querySelector("#search-text-input");
   let cityName = searchInput.value.trim();
 
-  if (cityName !== "") {
+  
     
   
 

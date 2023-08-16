@@ -82,7 +82,7 @@ currentLocationButton.addEventListener("click", getCurrentTemp);
 search("Nairobi");
 
 /*function search(event) {
-  event.preventDefault();
+  
   
   
 

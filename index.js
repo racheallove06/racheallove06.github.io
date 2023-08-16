@@ -84,7 +84,7 @@ search("Nairobi");
 /*function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-text-input");
-  let cityName = searchInput.value.trim();
+  
 
   
     

@@ -90,5 +90,5 @@ search("Nairobi");
     displaySearchedCity(cityName);
   }*/
 
-/*let form = document.querySelector("#search-form");
+
 

@@ -1,4 +1,5 @@
 
+
   function formatDate() {
   let currentTime = new Date();
 
@@ -19,7 +20,7 @@
 formatDate();
 
 /* changing the city name*/
-function displayForecast() {
+/*function displayForecast() { 
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Thur", "Sat", "Sun", "Mon", "Tue", "Wed"];
@@ -43,8 +44,10 @@ function displayForecast() {
             </div>
            `;
   });
-   forecastHTML = forecastHTML + `</div>`;
+
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}*/
 function search(city) {
   let apiKey = "aac97fb2fbt9362853a0a43aca162o74";
 
@@ -87,19 +90,18 @@ let clickfaren = document.querySelector("#faren-link");
 clickfaren.addEventListener("click", showFahrenheitTemp);
 
 /*api sec*/
-  function getForeCast(coordinates) {
+function getForeCast(coordinates) {
   console.log(coordinates);
-  apiKey = "fb2fbt9362853a0a43aca162o74";
-  apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiUrl}$units=metric`;
+  apiKey = "bd79ao40tde3dec118ca46bc3e6dd55f";
+  apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}`;
   axios.get(apiUrl).then(displayForecast);
+  console.log(apiUrl);
 }
 
 function showTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.city;
-
-  document.querySelector("#celsius").innerHTML = celsiusTemperature;
-
   celsiusTemperature = Math.round(response.data.temperature.current);
+  document.querySelector("#celsius").innerHTML = celsiusTemperature;
 
   document.querySelector(
     "#humidity"
@@ -114,10 +116,7 @@ function showTemperature(response) {
 
   document
     .querySelector("#weather-icon")
-    .setAttribute(
-      "src",
-      `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon_url}`
-    );
+    .setAttribute("src", `${response.data.condition.icon_url}`);
   document
     .querySelector("#weather-icon")
     .setAttribute("alt", response.data.condition.description);
@@ -140,8 +139,6 @@ let celsiusTemperature = null;
 
 search("Nairobi");
 
-
-  
   
 
   

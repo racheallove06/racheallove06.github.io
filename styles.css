@@ -173,36 +173,53 @@ p3 {
   position: relative;
   right: 10px;
 }
-#weather-forecast-date {
+.weather-forecast-date {
   position: relative;
   right: 0px;
   margin-left: 20px;
   font-size: 20px;
   top: 50px;
   bottom: 40px;
+  left: 15px;
   margin-top: 30px;
+  padding-top: 7px;
+  line-height: 15px;
 }
 
 .forecast-image {
   position: relative;
   bottom: -50px;
-  margin-left: 10px;
+  left: 15px;
+  font-size: 10px;
+  display: block;
+  height: 56px;
+  margin: 1px 4px 0;
+  width: 56px;
+  align-items: center;
+  text-align: center;
 }
 .weather {
   font-size: 30px;
 }
 
 .temperature-container {
-  margin-bottom: 10px;
   position: relative;
-  bottom: -40px;
+  left: 10px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 15px;
+  margin-top: 30px;
   margin-left: 10px;
 }
+
 .temperature-1 {
+  display: inline;
+  margin-top: 10px;
   font-size: 24px;
 }
 
 .temperature-2 {
+  display: inline;
   font-size: 20px;
   opacity: 0.8;
 }
@@ -227,15 +244,20 @@ a {
 #row-2 {
   margin-top: 20px;
 }
-#opensource {
-  position: relative;
-  top: 100px;
-}
+
 .col-2 {
   font-size: 24px;
 }
 .active {
   color: white;
+}
+.day-theme {
+  background-color: lightblue;
+}
+
+.night-theme {
+  background-color: darkblue;
+  /* Other night theme styles */
 }
 
 

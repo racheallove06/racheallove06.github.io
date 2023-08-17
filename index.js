@@ -1,6 +1,4 @@
-
-
-  function formatDate() {
+function formatDate() {
   let currentTime = new Date();
 
   let currenthour = currentTime.getHours();
@@ -18,36 +16,59 @@
   time.innerHTML = `${day} ${currenthour}:${currentminute} `;
 }
 formatDate();
+/* changing the time to day*/
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  return days[day];
+}
 
-/* changing the city name*/
-/*function displayForecast() { 
+/* displaying the forecast*/
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thur", "Sat", "Sun", "Mon", "Tue", "Wed"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` 
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col-2">
-              <div class="weather-forecast-date">${day}</div>
+          
+              <div class="weather-forecast-date">${formatDay(
+                forecastDay.time
+              )}</div>
+              
 
               <div class="weather-emoji"></div>
               <img
-                src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png"
+                src= ${forecastDay.condition.icon_url}
                 class="forecast-image"
               />
               <br />
               <div class="temperature-container">
-                <span class="temperature temperature-1">18°</span>
-                <span class="temperature temperature-2">13°</span>
+              <span class="temperature temperature-1" >${Math.round(
+                forecastDay.temperature.maximum
+              )}°</span> 
+                   <span class="temperature temperature-2">${Math.round(
+                     forecastDay.temperature.minimum
+                   )}°</span>  
+                
+               
               </div>
+              
             </div>
+    
            `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-}*/
+}
+
 function search(city) {
   let apiKey = "aac97fb2fbt9362853a0a43aca162o74";
 
@@ -121,6 +142,9 @@ function showTemperature(response) {
     .querySelector("#weather-icon")
     .setAttribute("alt", response.data.condition.description);
   getForeCast(response.data.coordinates);
+
+  getForeCast(response.data.coordinates); ///
+  updateThemeBasedOnTime(response.data.sunrise, response.data.sunset); ////
 }
 function searchPosition(position) {
   let apiKey = "aac97fb2fbt9362853a0a43aca162o74";
@@ -139,9 +163,23 @@ let celsiusTemperature = null;
 
 search("Nairobi");
 
-  
+/*changing themes*/
 
-  
+let DAY_THEME_CLASS = "day-theme";
+let NIGHT_THEME_CLASS = "night-theme";
+
+function updateThemeBasedOnTime(sunriseTimestamp, sunsetTimestamp) {
+  let currentTime = Math.floor(new Date().getTime() / 1000);
+
+  /*if (currentTime >= sunriseTimestamp && currentTime <= sunsetTimestamp) {
+    document.body.classList.remove(NIGHT_THEME_CLASS);
+    document.body.classList.add(DAY_THEME_CLASS);
+  } else {
+    document.body.classList.remove(DAY_THEME_CLASS);
+    document.body.classList.add(NIGHT_THEME_CLASS);
+  }
+}*/
+
     
   
 

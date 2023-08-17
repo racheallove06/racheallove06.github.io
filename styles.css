@@ -82,9 +82,17 @@ body {
   position: relative;
   left: 100px;
   width: 100%;
+   border-radius: 10px;
+  background-color: black;
+  border: 2px solid #007bff;
 }
 #current {
   max-width: 50%;
+    background-color: black;
+  border-radius: 10px;
+  flex: 0 0 25%;
+  border: 2px solid #61f135;
+
 }
 
 button {
@@ -106,10 +114,13 @@ h1 {
   position: relative;
   top: -20px;
 }
-.emoji {
+#weather-icon {
   font-size: 50px;
-  margin-left: 10px;
+  margin-left: 15px;
+  position: relative;
+  bottom: 10px;
 }
+
 li {
   font-size: 14px;
   opacity: 1.5;
@@ -156,16 +167,21 @@ p3 {
   text-align: right;
   margin-right: 10px;
   position: relative;
-  right: 10px;
-}
-#temp-row {
+  right: 10px;}
+
+  #weather-forecast-date{
   position: relative;
   right: 0px;
-  margin-left: 10px;
+  margin-left: 20px;
   font-size: 20px;
   top: 50px;
   bottom: 40px;
   margin-top: 30px;
+}
+.forecast-image {
+  position: relative;
+  bottom: -50px;
+  margin-left: 10px;
 }
 .weather {
   font-size: 30px;
@@ -174,7 +190,8 @@ p3 {
 .temperature-container {
   margin-bottom: 10px;
   position: relative;
-  bottom: 10px;
+  bottom: -40px;
+  margin-left:10px;
 }
 .temperature-1 {
   font-size: 20px;
@@ -190,12 +207,13 @@ ul {
   padding: 0;
   margin-bottom: 20px;
 }
-#cloudy {
+#description {
   position: relative;
   top: -10px;
   font-size: 24px;
   opacity: 0.8;
 }
+
 a {
   text-decoration: none;
 }
@@ -207,5 +225,13 @@ a {
   position: relative;
   top: 100px;
 }
+.col-2 {
+  font-size: 24px;
+}
+.active {
+  color: white;
+}
+
+
 
 

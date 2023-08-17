@@ -19,6 +19,32 @@
 formatDate();
 
 /* changing the city name*/
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thur", "Sat", "Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+            <div class="col-2">
+              <div class="weather-forecast-date">${day}</div>
+
+              <div class="weather-emoji"></div>
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png"
+                class="forecast-image"
+              />
+              <br />
+              <div class="temperature-container">
+                <span class="temperature temperature-1">18°</span>
+                <span class="temperature temperature-2">13°</span>
+              </div>
+            </div>
+           `;
+  });
+   forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 function search(city) {
   let apiKey = "aac97fb2fbt9362853a0a43aca162o74";
 
@@ -61,6 +87,12 @@ let clickfaren = document.querySelector("#faren-link");
 clickfaren.addEventListener("click", showFahrenheitTemp);
 
 /*api sec*/
+  function getForeCast(coordinates) {
+  console.log(coordinates);
+  apiKey = "fb2fbt9362853a0a43aca162o74";
+  apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiUrl}$units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function showTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.city;
@@ -71,10 +103,10 @@ function showTemperature(response) {
 
   document.querySelector(
     "#humidity"
-  ).innerHTML = `Humidity:${response.data.main.humidity}%`;
+  ).innerHTML = `Humidity:${response.data.temperature.humidity}%`;
 
   document.querySelector("#wind").innerHTML = `Wind:${Math.round(
-    response.data.temperature.humidity
+    response.data.wind.speed
   )}km/hr`;
 
   document.querySelector("#description").innerHTML =
@@ -89,6 +121,7 @@ function showTemperature(response) {
   document
     .querySelector("#weather-icon")
     .setAttribute("alt", response.data.condition.description);
+  getForeCast(response.data.coordinates);
 }
 function searchPosition(position) {
   let apiKey = "aac97fb2fbt9362853a0a43aca162o74";

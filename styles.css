@@ -20,8 +20,9 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .shadow-sm {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) ;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
 #search-text-input {
@@ -45,6 +46,7 @@ body {
   left: 70px;
   flex: 0 0 50%;
   max-width: 150%;
+  border-radius: 10px;
 }
 #search-text-input::placeholder {
   color: #fff;
@@ -82,17 +84,16 @@ body {
   position: relative;
   left: 100px;
   width: 100%;
-   border-radius: 10px;
+  border-radius: 10px;
   background-color: black;
   border: 2px solid #007bff;
 }
 #current {
   max-width: 50%;
-    background-color: black;
+  background-color: black;
   border-radius: 10px;
   flex: 0 0 25%;
   border: 2px solid #61f135;
-
 }
 
 button {
@@ -105,7 +106,6 @@ button {
 }
 
 h1 {
-  font-size: 56px;
   margin-bottom: 20px;
 }
 .degree {
@@ -114,11 +114,15 @@ h1 {
   position: relative;
   top: -20px;
 }
-#weather-icon {
-  font-size: 50px;
-  margin-left: 15px;
+#celsius {
+  font-size: 56px;
+  top: 10px;
   position: relative;
-  bottom: 10px;
+  top: 10px;
+}
+
+#weather-icon {
+  font-size: 30px;
 }
 
 li {
@@ -167,9 +171,9 @@ p3 {
   text-align: right;
   margin-right: 10px;
   position: relative;
-  right: 10px;}
-
-  #weather-forecast-date{
+  right: 10px;
+}
+#weather-forecast-date {
   position: relative;
   right: 0px;
   margin-left: 20px;
@@ -178,6 +182,7 @@ p3 {
   bottom: 40px;
   margin-top: 30px;
 }
+
 .forecast-image {
   position: relative;
   bottom: -50px;
@@ -191,19 +196,21 @@ p3 {
   margin-bottom: 10px;
   position: relative;
   bottom: -40px;
-  margin-left:10px;
+  margin-left: 10px;
 }
 .temperature-1 {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .temperature-2 {
-  font-size: 18px;
+  font-size: 20px;
   opacity: 0.8;
 }
 ul {
   list-style: none;
-
+  position: relative;
+  bottom: -20px;
+  right: -30px;
   padding: 0;
   margin-bottom: 20px;
 }
@@ -213,7 +220,6 @@ ul {
   font-size: 24px;
   opacity: 0.8;
 }
-
 a {
   text-decoration: none;
 }
@@ -231,6 +237,7 @@ a {
 .active {
   color: white;
 }
+
 
 
 

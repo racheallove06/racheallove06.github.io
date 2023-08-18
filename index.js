@@ -28,21 +28,17 @@ function formatDay(timestamp) {
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row forecastt">`;
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
         `
-            <div class="col-2">
-          
-              <div class="weather-forecast-date">${formatDay(
-                forecastDay.time
-              )}</div>
-              
-
-              <div class="weather-emoji"></div>
+            <div class="col-2 forecol" class="active">
+         
+              <div  class="weather-forecast-date">${formatDay(forecastDay.time)}
+              <br />
               <img
                 src= ${forecastDay.condition.icon_url}
                 class="forecast-image"
@@ -55,6 +51,7 @@ function displayForecast(response) {
                    <span class="temperature temperature-2">${Math.round(
                      forecastDay.temperature.minimum
                    )}°</span>  
+                   </div>
                 
                
               </div>
@@ -144,7 +141,7 @@ function showTemperature(response) {
   getForeCast(response.data.coordinates);
 
   getForeCast(response.data.coordinates); ///
-  updateThemeBasedOnTime(response.data.sunrise, response.data.sunset); ////
+  ////
 }
 function searchPosition(position) {
   let apiKey = "aac97fb2fbt9362853a0a43aca162o74";
@@ -164,21 +161,6 @@ let celsiusTemperature = null;
 search("Nairobi");
 
 /*changing themes*/
-
-let DAY_THEME_CLASS = "day-theme";
-let NIGHT_THEME_CLASS = "night-theme";
-
-function updateThemeBasedOnTime(sunriseTimestamp, sunsetTimestamp) {
-  let currentTime = Math.floor(new Date().getTime() / 1000);
-
-  /*if (currentTime >= sunriseTimestamp && currentTime <= sunsetTimestamp) {
-    document.body.classList.remove(NIGHT_THEME_CLASS);
-    document.body.classList.add(DAY_THEME_CLASS);
-  } else {
-    document.body.classList.remove(DAY_THEME_CLASS);
-    document.body.classList.add(NIGHT_THEME_CLASS);
-  }
-}*/
 
     
   

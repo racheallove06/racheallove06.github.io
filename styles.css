@@ -1,8 +1,12 @@
 body {
   font-family: "ABeeZee", sans-serif;
   font-family: "Ysabeau Office", sans-serif;
-  color: white;
-  background: #081b29;
+  color: black;
+  background: linear-gradient(
+    181.2deg,
+    rgb(52, 225, 255) 10.5%,
+    rgb(254, 254, 254) 86.8%
+  );
   margin: 20px auto;
   padding: 0;
   display: flex;
@@ -14,11 +18,15 @@ body {
   width: 900px;
   height: 500px;
   margin: 20px;
-  background-color: #081b29;
+  background: linear-gradient(
+    181.2deg,
+    rgb(52, 225, 255) 10.5%,
+    rgb(254, 254, 254) 86.8%
+  );
   padding: 0;
-  border: 2px solid #ccc;
+  border: 1px solid #060606;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .shadow-sm {
@@ -33,15 +41,15 @@ body {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
-  background-color: rgb(0, 0, 0);
+  background-color: #34e1ff;
   background-clip: padding-box;
-  border: 1px solid #007bff;
+  border: 1px solid #ffff;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   margin-left: 20px;
   margin-top: 10px;
   margin-bottom: 30px;
-  color: #ffffff;
+  color: #000000;
   position: relative;
   left: 70px;
   flex: 0 0 50%;
@@ -62,8 +70,8 @@ body {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 .btn-primary {
-  color: #fff;
-  background-color: #007bff;
+  color: #000000;
+  background-color: #34e1ff;
   border-color: #007bff;
 }
 .btn {
@@ -85,15 +93,29 @@ body {
   left: 100px;
   width: 100%;
   border-radius: 10px;
-  background-color: black;
-  border: 2px solid #007bff;
+  background-color: #34e1ff;
+  color: #000000;
+  font-weight: 400;
+  border: 1px solid #ffffff;
+  transition: all 200ms ease-in-out;
+}
+#button2:hover {
+  color: #34e1ff;
+  background: #fff;
 }
 #current {
   max-width: 50%;
-  background-color: black;
+  background-color: #34e1ff;
   border-radius: 10px;
   flex: 0 0 25%;
-  border: 2px solid #61f135;
+  color: #000000;
+  font-weight: 400;
+  border: 1px solid #ffffff;
+  transition: all 200ms ease-in-out;
+}
+#current:hover {
+  color: #34e1ff;
+  background: #fff;
 }
 
 button {
@@ -122,16 +144,19 @@ h1 {
 }
 
 #weather-icon {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 li {
-  font-size: 14px;
-  opacity: 1.5;
+  font-size: 22px;
+  font-weight: 500;
   line-height: 1.5;
 }
 p2 {
   font-size: 26px;
+  position: relative;
+  left: 40px;
+  font-weight: 500;
 }
 .temp {
   transition: all 200ms ease-in-out;
@@ -140,7 +165,7 @@ p2 {
 .temp:hover {
   text-decoration: underline;
   cursor: pointer;
-  color: #0b5ed7;
+  color: #34e1ff;
 }
 .precipitation {
   transition: all 200ms ease-in-out;
@@ -148,7 +173,7 @@ p2 {
 .precipitation:hover {
   text-decoration: underline;
   cursor: pointer;
-  color: #0b5ed7;
+  color: #34e1ff;
 }
 .wind {
   transition: all 200ms ease-in-out;
@@ -156,7 +181,7 @@ p2 {
 .wind:hover {
   text-decoration: underline;
   cursor: pointer;
-  color: #0b5ed7;
+  color: #34e1ff;
 }
 #city {
   font-weight: 600;
@@ -164,37 +189,29 @@ p2 {
 }
 .time {
   font-size: 24px;
-  opacity: 0.8;
+  font-weight: 600;
 }
 p3 {
+  position: relative;
   line-height: 1.2;
   text-align: right;
-  margin-right: 10px;
+  margin-right: 20px;
   position: relative;
-  right: 10px;
+  right: 20px;
 }
 .weather-forecast-date {
-  position: relative;
-  right: 0px;
-  margin-left: 20px;
   font-size: 20px;
-  top: 50px;
-  bottom: 40px;
-  left: 15px;
-  margin-top: 30px;
+  font-weight: 500;
   padding-top: 7px;
   line-height: 15px;
 }
 
 .forecast-image {
-  position: relative;
-  bottom: -50px;
-  left: 15px;
   font-size: 10px;
   display: block;
-  height: 56px;
+  height: 60px;
   margin: 1px 4px 0;
-  width: 56px;
+  width: 60px;
   align-items: center;
   text-align: center;
 }
@@ -203,25 +220,18 @@ p3 {
 }
 
 .temperature-container {
-  position: relative;
-  left: 10px;
   font-size: 13px;
   font-weight: normal;
   line-height: 15px;
-  margin-top: 30px;
-  margin-left: 10px;
 }
 
 .temperature-1 {
-  display: inline;
-  margin-top: 10px;
   font-size: 24px;
+  font-weight: 400;
 }
 
 .temperature-2 {
-  display: inline;
   font-size: 20px;
-  opacity: 0.8;
 }
 ul {
   list-style: none;
@@ -235,7 +245,8 @@ ul {
   position: relative;
   top: -10px;
   font-size: 24px;
-  opacity: 0.8;
+  color: #fff;
+  font-weight: 400;
 }
 a {
   text-decoration: none;
@@ -251,13 +262,35 @@ a {
 .active {
   color: white;
 }
-.day-theme {
-  background-color: lightblue;
-}
 
-.night-theme {
-  background-color: darkblue;
-  /* Other night theme styles */
+.weather-forecast {
+  display: flex;
+  justify-content: space-between;
+}
+.forecastt {
+  display: flex;
+  justify-content: space-between;
+}
+.forecol {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 60px;
+  left: 30px;
+  justify-content: space-between;
+  border-radius: 10px;
+  margin: 0 15px;
+  transition: all 200ms ease-in-out;
+  background: #54e2fc;
+}
+.forecol:hover {
+  cursor: pointer;
+  background-color: #fff;
+  transform: scale(1.2);
+  color: black;
 }
 
 

@@ -3,7 +3,7 @@ function formatDate() {
 
   let currenthour = currentTime.getHours();
   if (currenthour < 10) {
-    currenthour = `0${currenthour}`;
+    currenthour = `0${currenthour}`;                                                       
   }
   let currentminute = currentTime.getMinutes();
   if (currentminute < 10) {
